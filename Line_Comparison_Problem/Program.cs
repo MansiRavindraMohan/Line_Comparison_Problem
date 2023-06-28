@@ -12,15 +12,19 @@ namespace Line_Comparison_Problem
         {
             LineLength obj_One = new LineLength(2, 3, 4, 5);
             double length_One = obj_One.Calculate();
-            LineLength obj_Two = new LineLength(2, 3, 4, 5);
+            LineLength obj_Two = new LineLength(2, 3, 8, 5);
             double length_Two = obj_Two.Calculate();
-            if (length_One.Equals(length_Two))
+            if (length_One.CompareTo(length_Two) == 0)
             {
-                Console.WriteLine("Length of both lines are equal");
+                Console.WriteLine("Both lines are equal");
+            }
+            else if (length_One.CompareTo(length_Two) > 0)
+            {
+                Console.WriteLine("Line one is greater than line two");
             }
             else
             {
-                Console.WriteLine("Length of both lines are not equal");
+                Console.WriteLine("Line two is greater than line one");
             }
             Console.ReadLine();
         }
